@@ -1,0 +1,9 @@
+<!-- farmers/templates/choose_crop_type.html -->
+<h1>Choose Crop Type</h1>
+<p>Hello, {{ username }} from {{ state }} near {{ market }}!</p>
+<p>Choose the type of crop:</p>
+<ul>
+    {% for crop_type in crop_types %}
+        <li><a href="{% url 'display_prices' username state market crop_type %}">{{ crop_type }}</a></li>
+    {% endfor %}
+</ul>

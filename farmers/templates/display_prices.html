@@ -1,0 +1,22 @@
+<!-- farmers/templates/display_prices.html -->
+<h1>Price Details</h1>
+<p>Hello, {{ username }} from {{ state }} near {{ market }}!</p>
+<p>Crop Type: {{ crop_type }}</p>
+<p>Today's Price: ${{ price_today }}</p>
+<h2>Last 10 Days Prices</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for price in price_last_10_days %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>${{ price }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

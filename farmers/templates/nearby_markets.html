@@ -1,0 +1,9 @@
+<!-- farmers/templates/nearby_markets.html -->
+<h1>Nearby Markets</h1>
+<p>Hello, {{ username }} from {{ state }}!</p>
+<p>Choose a nearby market:</p>
+<ul>
+    {% for market in markets %}
+        <li><a href="{% url 'choose_crop_type' username state market %}">{{ market }}</a></li>
+    {% endfor %}
+</ul>
